@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Rubik's Cube Simulation - Java Project</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+        <a class="navbar-brand" href="index.html">Back to Portfolio</a>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead text-center">
+    <div class="container px-4">
+        <h1 class="fw-bold">Rubik's Cube Simulation in Java</h1>
+        <p class="lead">UM CSCI 152- Java</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-10">
+                <h2>Assignment Requirements</h2>
+                <ul>
+                    <li>Simulate a Rubik's cube as a 3D array (6 faces, each 3×3).</li>
+                    <li>Allow rotation of faces in both clockwise and counterclockwise directions.</li>
+                    <li>Accept user input or command-line arguments for moves.</li>
+                    <li>Track all moves made onto a stack.</li>
+                    <li>Print a sequence to reverse all moves (solve the cube).</li>
+                    <li>Provide a visual output of the cube after operations.</li>
+                </ul>
+
+                <h2>Project Overview</h2>
+                <p>
+                    This program simulates a 3×3 Rubik's Cube using a 3-dimensional char array in Java.
+                    It supports single and multiple face rotations, tracks all moves made during the session,
+                    and can output a solution sequence to undo all previous moves.
+                </p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Full cube initialization with color coding: white, yellow, blue, green, red, orange.</li>
+                    <li>Clockwise and counterclockwise rotation methods for each face.</li>
+                    <li>Move history stack to track and solve based on performed moves.</li>
+                    <li>Support for live input and automated testing via command-line arguments.</li>
+                    <li>Formatted console printing for visualizing cube state.</li>
+                </ul>
+
+                <h2>Sample Code: Rotating a Face</h2>
+                <pre><code>
+public static void rotateFaceClockwise(char[][] face) {
+    char[][] temp = new char[3][3];
+    for (int i = 0; i &lt; 3; i++) {
+        for (int j = 0; j &lt; 3; j++) {
+            temp[j][2 - i] = face[i][j];
+        }
+    }
+    for (int i = 0; i &lt; 3; i++) {
+        System.arraycopy(temp[i], 0, face[i], 0, 3);
+    }
+}
+                </code></pre>
+
+                <h2>Sample Code: Stacking Moves and Solving</h2>
+                <pre><code>
+ArrayList&lt;String&gt; stack = new ArrayList&lt;&gt;();
+
+public static void solve(ArrayList&lt;String&gt; stack) {
+    System.out.print("Solution: ");
+    for (int i = stack.size() - 1; i &gt;= 0; i--) {
+        System.out.print(stack.get(i) + " ");
+    }
+    System.out.println();
+}
+                </code></pre>
+
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>Java 17</li>
+                    <li>Multidimensional arrays</li>
+                    <li>Scanner input handling</li>
+                    <li>ArrayList-based move tracking</li>
+                </ul>
+
+                <h2>Reflection</h2>
+                <p>
+                    This project challenged my understanding of 3D spatial reasoning and array indexing.
+                    It also provided valuable practice handling real-time input and state management in an object-based simulation.
+                    Possible improvements include adding scrambling, move optimizations, and full cube solving algorithms.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container px-4">
+        <p class="m-0 text-center text-white-50">
+            Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" style="color: #66b2ff;">Creative Bootstrap theme</a>.
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

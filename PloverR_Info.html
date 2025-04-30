@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Plover Chick Survival Statistical Analysis Project" />
+    <meta name="author" content="Your Name" />
+    <title>Plover Chick Survival Analysis - Portfolio</title>
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Bootstrap and Core Theme CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="index.html">Back to Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+                aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Masthead -->
+    <header class="masthead">
+        <div class="container px-4 text-center">
+            <h1 class="fw-bold">Piping Plover Chick Apparent Survival Analysis in R</h1>
+            <p class="lead">UM WILD 571- Estimation of Demographic Parameters</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+   <section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-8">
+                <h2>Project Overview</h2>
+                <p class="lead">
+                    This project involved a statistical evaluation of <strong>Piping Plover chick survival</strong> comparing <strong>treatment nests</strong> (nests protected by cages) versus <strong>control nests</strong> (unprotected nests).
+                    The analysis was conducted using the R programming language to assess the effectiveness of caging as a conservation strategy.
+                </p>
+
+                <h2>Objective</h2>
+                <p>
+                    To determine whether caging Piping Plover nests significantly improves chick survival rates compared to non-caged (control) nests, while also assessing potential regional differences in survival.
+                </p>
+
+                <h2>Methods</h2>
+                <ul>
+                    <li>Data Collection: Chick survival outcomes were recorded for both treatment and control nests across multiple regions.</li>
+                    <li>Statistical Software: Analysis conducted using <strong>R</strong>.</li>
+                    <li>Statistical Tests:
+                        <ul>
+                            <li>Chi-squared tests to compare survival proportions.</li>
+                            <li>Logistic regression models to assess survival based on treatment and region.</li>
+                        </ul>
+                    </li>
+                    <li>Visualization: Survival outcomes were plotted using bar graphs and survival curves.</li>
+                </ul>
+
+                <h2>Results</h2>
+                <p>
+                    Due to the poor goodness of fit, caution should be taken when interpreting these results.
+                </p>
+                <ul>
+                    <li>There is a potential <strong>region effect</strong> on chick survival. Region 5 had five significant comparisons:
+                        <ul>
+                            <li>Four comparisons were positive, meaning that regions 1–4 had higher apparent survival than region 5.</li>
+                            <li>One comparison (Region 6 vs. 5) was negative, meaning that region 6 had higher apparent survival than region 5.</li>
+                            <li>Overall, region 5 appears to have lower apparent survival than other regions.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Treatment effect:</strong> There were no statistically significant results suggesting that caged nests had higher post-fledge chick survival compared to non-caged nests.</li>
+                    <li>While caging may benefit nest success, it does not appear to confer a long-term survival advantage for chicks after fledging.</li>
+                </ul>
+
+                <h2>Limitations</h2>
+                <p>
+                    The models and inferences are based on apparent survival, which accounts for individuals lost through death or emigration from the study area. 
+                    Recapture probability was not directly assessed; only apparent survival was analyzed.
+                </p>
+
+                <h2>Assumption Violations</h2>
+                <p>
+                    One important assumption that may have been violated is that <strong>individual survival fates are independent</strong>. 
+                    Groups of nestmates tend to stay together under parental care, meaning that one chick’s survival outcome could influence others (e.g., increased predator attention or disease transmission within a brood).
+                    This potential dependence could affect the validity of the statistical inferences.
+                </p>
+
+                    <h2>Screenshots</h2>
+                    <div class="mb-4">
+                        <img src="images/plover1.png" class="img-fluid rounded mb-3" alt="Plover Analysis Plot Screenshot" />
+                        <img src="images/plover2.png" class="img-fluid rounded mb-3" alt="Plover Logistic Regression Screenshot" />
+                    </div>
+
+                    <h2>Technologies Used</h2>
+                    <ul>
+                        <li>R Programming Language and R Studio</li>
+                        <li>nimble package for advanced biological statistical analyses</li>
+                    </ul>
+                    <h2>Reflections</h2>
+                    <p>
+                        This project marked a turning point in my life. While diving deep into the R programming language to uncover patterns in plover chick survival, I realized how much I enjoyed the process of writing code and using data to tell/show stories about the natural world. 
+                        It helped me recognize the powerful connections between ecology and computer science; How technical tools can be used for real-world conservation decisions. 
+                        This experience ultimately inspired me to return to school to pursue a degree in computer science, with the goal of combining both fields to create impactful, data-driven solutions for wildlife research and beyond!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+        <div class="container px-4">
+            <p class="m-0 text-center text-white-50">
+                Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" style="color: #66b2ff;">StartBootstrap Creative template</a>.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

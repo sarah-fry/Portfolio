@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Blackjack Game - Java Project</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+        <a class="navbar-brand" href="index.html">Back to Portfolio</a>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead text-center">
+    <div class="container px-4">
+        <h1 class="fw-bold">Blackjack Game in Python</h1>
+        <p class="lead">UM CSCI 151- Python 2</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-10">
+                <h2>Assignment Requirements</h2>
+                <ul>
+                    <li>Implement a playable Blackjack game in Python with one player and one dealer.</li>
+                    <li>Card, Deck, and Player classes must be created with docstrings.</li>
+                    <li>Game must reshuffle deck if it drops below 20 cards.</li>
+                    <li>Handle Ace values (1 or 11) appropriately.</li>
+                    <li>Implement standard Blackjack rules including:
+                        <ul>
+                            <li>Dealer stands on soft 17</li>
+                            <li>Pushes (ties) result in no win/loss</li>
+                            <li>3:2 payout for natural blackjack</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h2>Project Summary</h2>
+                <p>
+                    This is a console-based version of Blackjack built in Python, simulating classic casino rules. It features a full betting system, natural blackjack detection, reshuffling, and player/dealer interactions.
+                </p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Alternating play between player and automated dealer</li>
+                    <li>Docstring-compliant Card, Deck, and Player classes</li>
+                    <li>Betting system with win/loss/push payouts</li>
+                    <li>Dealer AI that respects soft 17</li>
+                    <li>Support for reshuffling based on deck size</li>
+                </ul>
+
+                <h2>Sample Code: Card Class</h2>
+                <pre><code>
+class Card:
+    """Represents a single playing card in a standard 52-card deck."""
+    def __init__(self, suit, face, value):
+        self.suit = suit
+        self.face = face
+        self.value = value
+
+    def get_value(self):
+        return self.value
+
+    def __str__(self):
+        return f"{self.face} of {self.suit}"
+                </code></pre>
+
+                <h2>Sample Code: Blackjack Logic</h2>
+                <pre><code>
+if self.player.blackjack():
+    if self.dealer.blackjack():
+        print("Push: Both you and the dealer have blackjack.")
+        self.player.win(bet_amount)
+    else:
+        print("Blackjack! You win 3:2 payout.")
+        self.player.win(int(bet_amount * 2.5))
+                </code></pre>
+
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>Python 3</li>
+                    <li>OOP (Object-Oriented Programming)</li>
+                    <li>Basic input/output and loop control</li>
+                </ul>
+
+                <h2>Reflection</h2>
+                <p>
+                    This project solidified my understanding of object-oriented programming and control flow. I implemented recursive logic for Ace evaluation and handled edge cases like dealer ties and re-shuffling logic.
+                    In future updates, I could expand the interface to support multiple players or add a graphical UI.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container px-4">
+        <p class="m-0 text-center text-white-50">
+            Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" style="color: #66b2ff;">Creative Bootstrap theme</a>.
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Board Game - Java Assignment</title>
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+        <a class="navbar-brand" href="index.html">Back to Portfolio</a>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead text-center">
+    <div class="container px-4">
+        <h1 class="fw-bold">Go Board Game in Java</h1>
+        <p class="lead">CSCI 152- Java</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-10">
+                <h2>Assignment Requirements</h2>
+                <ul>
+                    <li>Place black and white pieces in alternating turns.</li>
+                    <li>Detect out-of-bounds moves.</li>
+                    <li>Display a 9×9 Go board with crosshatch format.</li>
+                    <li>Implement capture logic (remove surrounded groups).</li>
+                    <li>Implement scoring (including controlled territory).</li>
+                    <li>Use recursion in either capture or scoring logic.</li>
+                </ul>
+
+                <h2>My Implementation</h2>
+                <p>
+                    I created a class <code>goBoard_SFry</code> with methods for turn-taking, board rendering,
+                    capture logic, and scoring. Recursion is used to:
+                </p>
+                <ul>
+                    <li>Check for liberties of groups (<code>hasLiberty</code>)</li>
+                    <li>Remove captured stones recursively (<code>removeGroup</code>)</li>
+                    <li>Flood-fill empty regions for territory scoring (<code>countTerritory</code>)</li>
+                </ul>
+                <p><strong>Note:</strong> Suicide moves are currently not prevented — stones placed in captured areas without liberties can survive. Scoring works, but may count those cases incorrectly.</p>
+
+                <h2>Sample Code Snippet</h2>
+                <pre><code>
+public void placePiece() {
+    if (!gameOn) return;
+
+    int playerColor = currentPlayer.equals("black(X)") ? 1 : 2;
+    int opponentColor = playerColor == 1 ? 2 : 1;
+
+    board[moveY][moveX] = playerColor;
+
+    for (int[] dir : directions) {
+        int ny = moveY + dir[0];
+        int nx = moveX + dir[1];
+        if (ny >= 0 && ny < boardSize && nx >= 0 && nx < boardSize && board[ny][nx] == opponentColor) {
+            boolean[][] visited = new boolean[boardSize][boardSize];
+            if (!hasLiberty(ny, nx, opponentColor, visited)) {
+                removeGroup(ny, nx, opponentColor);
+            }
+        }
+    }
+}
+                </code></pre>
+
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>Java (OOP and recursion)</li>
+                    <li>Console-based user interface</li>
+                </ul>
+
+                <h2>Reflection</h2>
+                <p>
+                    This project helped me understand recursive group traversal and territory control logic in Go.
+                    Handling edge cases like suicide moves and correct scoring requires further refinement.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container px-4">
+        <p class="m-0 text-center text-white-50">
+            Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" style="color: #66b2ff;">Creative Bootstrap theme</a>.
+        </p>
+    </div>
+</footer>
+
+<!-- Bootstrap core JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

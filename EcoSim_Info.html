@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Creature Simulation - Java Project</title>
+    <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container px-4">
+        <a class="navbar-brand" href="index.html">Back to Portfolio</a>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="masthead text-center">
+    <div class="container px-4">
+        <h1 class="fw-bold">Ecosystem Simulator in Java</h1>
+        <p class="lead">UM CSCI 152- Java</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container px-4">
+        <div class="row gx-4 justify-content-center">
+            <div class="col-lg-10">
+                <h2>Assignment Requirements</h2>
+                <ul>
+                    <li>At least three classes or interfaces</li>
+                    <li>At least two object relationships (inheritance, composition, etc.)</li>
+                    <li>A <code>Creature</code> class with:
+                        <ul>
+                            <li><code>die()</code></li>
+                            <li><code>reproduce()</code></li>
+                        </ul>
+                    </li>
+                    <li>A <code>World</code> class with:
+                        <ul>
+                            <li><code>createCreature()</code></li>
+                            <li><code>spawnFood()</code>, etc.</li>
+                        </ul>
+                    </li>
+                    <li>Support for multiple creatures in an environment</li>
+                    <li>Simulation loop with chance-based behaviors</li>
+                </ul>
+
+                <h2>Project Structure</h2>
+                <ul>
+                    <li><code>Species.java</code> – Abstract superclass for all lifeforms</li>
+                    <li><code>SagebrushVole.java</code>, <code>FerruginousHawk.java</code>, <code>CarrionBeetle.java</code> – Creature subclasses</li>
+                    <li><code>Plant.java</code> – Non-mobile, non-replicating entity</li>
+                    <li><code>Ecosystem.java</code> – Acts as the "world", holds population, manages simulation</li>
+                    <li><code>EcoSim.java</code> – Main driver class</li>
+                </ul>
+
+                <h2>Sample Code: Ecosystem Loop</h2>
+                <pre><code>
+public void step() {
+    timeStep++;
+    System.out.println("\n--- Time Step " + timeStep + " ---");
+
+    List&lt;Species&gt; newBorns = new ArrayList&lt;&gt;();
+    List&lt;Species&gt; toRemove = new ArrayList&lt;&gt;();
+
+    for (Species s : new ArrayList&lt;&gt;(population)) {
+        if (s.isAlive()) {
+            s.step(this);
+            Species baby = s.reproduce();
+            if (baby != null) newBorns.add(baby);
+        } else {
+            toRemove.add(s);
+        }
+    }
+
+    population.addAll(newBorns);
+    population.removeAll(toRemove);
+
+    if (timeStep % 2 == 0) growPlants(1);
+}
+                </code></pre>
+
+                <h2>Sample Code: Creature Behavior (Carrion Beetle)</h2>
+                <pre><code>
+@Override
+public void step(Ecosystem eco) {
+    if (!isAlive()) return;
+
+    ageUp();
+    energy--;
+
+    if (energy <= 0) {
+        die();
+        return;
+    }
+
+    if (Math.random() &lt; 0.2) {
+        energy += 1;
+        System.out.println(name + " found some decay! Energy is now " + energy);
+    }
+}
+
+@Override
+public Species reproduce() {
+    if (canReproduce()) {
+        energy -= 3;
+        System.out.println(name + " has laid eggs!");
+        return new CarrionBeetle();
+    }
+    return null;
+}
+                </code></pre>
+
+                <h2>Technologies Used</h2>
+                <ul>
+                    <li>Java</li>
+                    <li>Object-Oriented Programming (inheritance, polymorphism)</li>
+                    <li>Random name generation from <code>names.txt</code></li>
+                    <li>Recursion for reproduction and lifespan handling</li>
+                </ul>
+
+                <h2>Reflection</h2>
+                <p>
+                    This project built a flexible base for future simulations like AI agents or genetic algorithms.
+                    It helped reinforce concepts like class design, random behavior modeling, and modular growth of simulation logic.
+                </p>
+
+                <h2>Next Steps</h2>
+                <ul>
+                    <li>Expand energy dynamics (e.g., food chains)</li>
+                    <li>Implement starvation, vision radius, or predator-prey logic</li>
+                    <li>Add visual grid or graphical representation of the ecosystem</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container px-4">
+        <p class="m-0 text-center text-white-50">
+            Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" style="color: #66b2ff;">Creative Bootstrap theme</a>.
+        </p>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+</html>
