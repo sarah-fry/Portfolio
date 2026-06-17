@@ -4,6 +4,6 @@ Welcome to my portfolio! I'm passionate about bridging the gap between **ecology
 
 Whether it's building tools for fieldwork, visualizing ecological networks, or automating data workflows, I aim to make scientific insight more accessible and impactful through thoughtful code.
 
-🔗 **Explore the portfolio**: [sarah-fry.github.io/Portfolio](https://sarah-fry.github.io/Portfolio/)
+**Explore the portfolio**: [sarah-fry.github.io/Portfolio](https://sarah-fry.github.io/Portfolio/)
 
 ---
