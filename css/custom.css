@@ -1,0 +1,11 @@
+/* Portfolio Custom Styles
+ * Custom overrides and additions for the portfolio project cards.
+ */
+.project-card .card-img-top {
+  height: 220px;
+  object-fit: cover;
+}
+
+.project-card .card-img-top[src*="WonderPods"] {
+  object-fit: contain;
+}
