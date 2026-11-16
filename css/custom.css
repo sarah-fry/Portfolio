@@ -49,3 +49,18 @@
 .media-placeholder code {
   color: #284b3a;
 }
+
+.project-screenshot {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.project-screenshot--top {
+  object-position: center top;
+}
+
+.portfolio-footer {
+  background-color: #f4623a;
+  color: #fff;
+}
