@@ -3,133 +3,100 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Plover Chick Survival Statistical Analysis Project" />
-    <meta name="author" content="Your Name" />
-    <title>Plover Chick Survival Analysis - Portfolio</title>
-
-    <!-- Favicon (optional) -->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-
-    <!-- Bootstrap and Core Theme CSS -->
+    <meta name="description" content="Sarah Fry's statistical analysis of apparent survival in piping plover chicks." />
+    <meta name="author" content="Sarah Fry" />
+    <title>Piping Plover Survival Analysis | Sarah Fry</title>
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/creative-theme.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
 </head>
 <body id="page-top">
-
-    <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container px-4">
             <a class="navbar-brand" href="index.html">Back to Portfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars ms-1"></i>
-            </button>
         </div>
     </nav>
 
-    <!-- Masthead -->
-    <header class="masthead">
-        <div class="container px-4 text-center">
-            <h1 class="fw-bold">Piping Plover Chick Apparent Survival Analysis in R</h1>
-            <p class="lead">UM WILD 571- Estimation of Demographic Parameters</p>
+    <header class="masthead text-center">
+        <div class="container px-4">
+            <p class="text-white-75 mb-2">UM · WILD 571</p>
+            <h1 class="fw-bold">Piping Plover Chick Survival Analysis</h1>
+            <p class="lead text-white-75">Using statistical models to explore conservation questions</p>
         </div>
     </header>
 
-    <!-- About Section -->
-   <section id="about">
-    <div class="container px-4">
-        <div class="row gx-4 justify-content-center">
-            <div class="col-lg-8">
-                <h2>Project Overview</h2>
-                <p class="lead">
-                    This project involved a statistical evaluation of <strong>Piping Plover chick survival</strong> comparing <strong>treatment nests</strong> (nests protected by cages) versus <strong>control nests</strong> (unprotected nests).
-                    The analysis was conducted using the R programming language to assess the effectiveness of caging as a conservation strategy.
-                </p>
+    <main>
+        <section class="page-section">
+            <div class="container px-4">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Project overview</h2>
+                        <p class="lead">
+                            I analyzed apparent survival in piping plover chicks to examine whether
+                            nest caging was associated with higher post-fledge survival. The project
+                            compared chicks from treatment nests (caged) with chicks from control nests
+                            (uncaged), and also explored differences among regions.
+                        </p>
 
-                <h2>Objective</h2>
-                <p>
-                    To determine whether caging Piping Plover nests significantly improves chick survival rates compared to non-caged (control) nests, while also assessing potential regional differences in survival.
-                </p>
-
-                <h2>Methods</h2>
-                <ul>
-                    <li>Data Collection: Chick survival outcomes were recorded for both treatment and control nests across multiple regions.</li>
-                    <li>Statistical Software: Analysis conducted using <strong>R</strong>.</li>
-                    <li>Statistical Tests:
+                        <h2 class="mt-5">Methods and findings</h2>
                         <ul>
-                            <li>Chi-squared tests to compare survival proportions.</li>
-                            <li>Logistic regression models to assess survival based on treatment and region.</li>
+                            <li>Used chi-squared tests to compare survival proportions between treatment groups.</li>
+                            <li>Fit logistic regression models to examine treatment and regional patterns.</li>
+                            <li>Created plots to communicate survival outcomes and model results.</li>
+                            <li>The analysis did not find statistically significant evidence that caging increased post-fledge chick survival.</li>
+                            <li>Some regional comparisons suggested lower apparent survival in Region 5; results should be interpreted cautiously because model fit was poor.</li>
                         </ul>
-                    </li>
-                    <li>Visualization: Survival outcomes were plotted using bar graphs and survival curves.</li>
-                </ul>
 
-                <h2>Results</h2>
-                <p>
-                    Due to the poor goodness of fit, caution should be taken when interpreting these results.
-                </p>
-                <ul>
-                    <li>There is a potential <strong>region effect</strong> on chick survival. Region 5 had five significant comparisons:
+                        <h2 class="mt-5">Analysis visuals</h2>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <figure class="mb-0">
+                                    <img src="images/plover1.png" class="img-fluid rounded" alt="Plot of piping plover chick survival analysis" />
+                                    <figcaption class="mt-2">Survival analysis plot</figcaption>
+                                </figure>
+                            </div>
+                            <div class="col-md-6">
+                                <figure class="mb-0">
+                                    <img src="images/plover2.png" class="img-fluid rounded" alt="Logistic regression output for the piping plover analysis" />
+                                    <figcaption class="mt-2">Logistic regression results</figcaption>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <h2 class="mt-5">Limitations</h2>
+                        <p>
+                            The models estimate apparent survival, which can reflect either death or
+                            emigration from the study area. Recapture probability was not directly
+                            assessed. The analysis also assumes individual fates are independent, an
+                            assumption that may not hold for chicks in the same brood.
+                        </p>
+
+                        <h2 class="mt-5">Tools and techniques</h2>
                         <ul>
-                            <li>Four comparisons were positive, meaning that regions 1–4 had higher apparent survival than region 5.</li>
-                            <li>One comparison (Region 6 vs. 5) was negative, meaning that region 6 had higher apparent survival than region 5.</li>
-                            <li>Overall, region 5 appears to have lower apparent survival than other regions.</li>
+                            <li><strong>R and RStudio:</strong> data analysis and visualization.</li>
+                            <li><strong>Statistical methods:</strong> chi-squared tests and logistic regression.</li>
+                            <li><strong>nimble:</strong> used for advanced biological statistical analyses.</li>
                         </ul>
-                    </li>
-                    <li><strong>Treatment effect:</strong> There were no statistically significant results suggesting that caged nests had higher post-fledge chick survival compared to non-caged nests.</li>
-                    <li>While caging may benefit nest success, it does not appear to confer a long-term survival advantage for chicks after fledging.</li>
-                </ul>
 
-                <h2>Limitations</h2>
-                <p>
-                    The models and inferences are based on apparent survival, which accounts for individuals lost through death or emigration from the study area. 
-                    Recapture probability was not directly assessed; only apparent survival was analyzed.
-                </p>
-
-                <h2>Assumption Violations</h2>
-                <p>
-                    One important assumption that may have been violated is that <strong>individual survival fates are independent</strong>. 
-                    Groups of nestmates tend to stay together under parental care, meaning that one chick’s survival outcome could influence others (e.g., increased predator attention or disease transmission within a brood).
-                    This potential dependence could affect the validity of the statistical inferences.
-                </p>
-
-                    <h2>Screenshots</h2>
-                    <div class="mb-4">
-                        <img src="images/plover1.png" class="img-fluid rounded mb-3" alt="Plover Analysis Plot Screenshot" />
-                        <img src="images/plover2.png" class="img-fluid rounded mb-3" alt="Plover Logistic Regression Screenshot" />
+                        <h2 class="mt-5">What I learned</h2>
+                        <p>
+                            Working through this analysis showed me how programming and statistical
+                            tools can help investigate real conservation questions—and why model
+                            assumptions and fit matter when interpreting results. It also helped inspire
+                            me to pursue computer science alongside my ecology background.
+                        </p>
                     </div>
-
-                    <h2>Technologies Used</h2>
-                    <ul>
-                        <li>R Programming Language and R Studio</li>
-                        <li>nimble package for advanced biological statistical analyses</li>
-                    </ul>
-                    <h2>Reflections</h2>
-                    <p>
-                        This project marked a turning point in my life. While diving deep into the R programming language to uncover patterns in plover chick survival, I realized how much I enjoyed the process of writing code and using data to tell/show stories about the natural world. 
-                        It helped me recognize the powerful connections between ecology and computer science; How technical tools can be used for real-world conservation decisions. 
-                        This experience ultimately inspired me to return to school to pursue a degree in computer science, with the goal of combining both fields to create impactful, data-driven solutions for wildlife research and beyond!
-                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container px-4">
             <p class="m-0 text-center text-white-50">
-                Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" style="color: #66b2ff;">StartBootstrap Creative template</a>.
+                Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" rel="noopener noreferrer" style="color: #66b2ff;">StartBootstrap Creative template</a>.
             </p>
         </div>
     </footer>
-
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
 </body>
 </html>

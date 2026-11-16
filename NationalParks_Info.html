@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sarah Fry's work on the National Parks feature in the onX Backcountry web map." />
+    <meta name="author" content="Sarah Fry" />
+    <title>National Parks Feature | Sarah Fry</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/creative-theme.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="index.html">Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <header class="masthead text-center">
+        <div class="container px-4">
+            <p class="text-white-75 mb-2">onX Maps · Summer 2026 Internship</p>
+            <h1 class="fw-bold">National Parks in onX Backcountry</h1>
+            <p class="lead text-white-75">Building a richer way to explore parks from the web map</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-section">
+            <div class="container px-4">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-10">
+                        <h2>Project overview</h2>
+                        <p class="lead">
+                            During my internship at onX Maps, I helped build out the National Parks card
+                            for the onX Backcountry web map. I contributed across the feature—from park
+                            details and map interactions to routes, campgrounds, trailheads, and
+                            favoriting—and my work was shipped to the development branch.
+                        </p>
+                        <p>
+                            The card brings useful park information into the map experience. Visitors can
+                            explore park details and related outdoor destinations without losing the
+                            context of the map.
+                        </p>
+
+                        <h2 class="mt-5">Feature walkthrough</h2>
+                        <figure class="mb-4">
+                            <img src="images/NPs_Live_Demo.gif" class="img-fluid rounded shadow-sm" alt="Animated demo of the National Parks feature in the onX Backcountry web app" />
+                            <figcaption class="mt-2 text-muted">Live demo of the National Parks feature.</figcaption>
+                        </figure>
+
+                        <h2 class="mt-5">Screenshots</h2>
+                        <p>These slots are ready for images of the National Parks card and its tabs.</p>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="media-placeholder h-100" role="note" aria-label="Park details screenshot placeholder">
+                                    <i class="bi bi-image" aria-hidden="true"></i>
+                                    <strong>Park details</strong>
+                                    <span>Add <code>images/national-parks-details.png</code> to show the park card and state information.</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media-placeholder h-100" role="note" aria-label="Routes screenshot placeholder">
+                                    <i class="bi bi-image" aria-hidden="true"></i>
+                                    <strong>Routes</strong>
+                                    <span>Add <code>images/national-parks-routes.png</code> to show the routes tab and “view more” experience.</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media-placeholder h-100" role="note" aria-label="Campgrounds screenshot placeholder">
+                                    <i class="bi bi-image" aria-hidden="true"></i>
+                                    <strong>Campgrounds</strong>
+                                    <span>Add <code>images/national-parks-campgrounds.png</code> to show campgrounds and favoriting.</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="media-placeholder h-100" role="note" aria-label="Trailheads screenshot placeholder">
+                                    <i class="bi bi-image" aria-hidden="true"></i>
+                                    <strong>Trailheads and map</strong>
+                                    <span>Add <code>images/national-parks-trailheads.png</code> to show trailheads or map highlighting.</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2 class="mt-5">What I worked on</h2>
+                        <ul>
+                            <li>Built the park details, routes, campgrounds, and trailheads tabs.</li>
+                            <li>Added routes pagination and “view more” behavior, including infinite scrolling across route types.</li>
+                            <li>Implemented park-card interactions including map-tap handling, park state metadata, an overflow menu, and an external link.</li>
+                            <li>Designed and iterated on a new set of National Parks icons.</li>
+                            <li>Added reusable campground favorite logic and National Parks favoriting.</li>
+                            <li>Added feature-flagged map highlighting for National Parks.</li>
+                            <li>Backfilled component tests and resolved TypeScript issues while integrating work across parallel contributions.</li>
+                        </ul>
+
+                        <h2 class="mt-5">Tools and techniques</h2>
+                        <ul>
+                            <li><strong>Vue and TypeScript:</strong> building web-map UI and tightening types in components and tests.</li>
+                            <li><strong>GraphQL and Apollo Studio:</strong> developing and validating queries for routes, campgrounds, and trailheads against the supergraph schema.</li>
+                            <li><strong>Composable logic:</strong> extracting campground favorite behavior into reusable, testable code.</li>
+                            <li><strong>Feature flags:</strong> gating National Parks map highlighting.</li>
+                            <li><strong>Automated tests and Git:</strong> improving test coverage and resolving conflicts as related work landed in shared components.</li>
+                        </ul>
+
+                        <h2 class="mt-5">What I learned</h2>
+                        <p>
+                            This project deepened my experience working with a GraphQL supergraph,
+                            writing reusable composables, and treating test health and feature flags as
+                            part of feature development. Coordinating changes across several parallel
+                            workstreams also taught me to review merge conflicts carefully and keep
+                            branch scope focused.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-5 bg-dark">
+        <div class="container px-4">
+            <p class="m-0 text-center text-white-50">
+                Portfolio built using the <a href="https://startbootstrap.com/theme/creative" target="_blank" rel="noopener noreferrer" style="color: #66b2ff;">StartBootstrap Creative template</a>.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
